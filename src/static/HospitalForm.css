@@ -1,0 +1,32 @@
+.create-hospital-container {
+    margin: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hospital-form {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: left;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:disabled {
+        background-color: rgba(0, 92, 92, 0.322);
+        cursor:not-allowed;
+    }
+}
