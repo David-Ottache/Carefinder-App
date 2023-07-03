@@ -34,9 +34,9 @@ function HomePage() {
     <div className="homepage-container">
       <div className="row">
         <div className="search-container">
-          <h3>Looking for something?</h3>
+          <h3>Search for a hospital in your City</h3>
           <button className="header-button" type="submit" onClick={handleSearch}>
-            search
+            Search
           </button>
         </div>
       </div>

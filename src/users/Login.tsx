@@ -75,13 +75,13 @@ function Login() {
         <form className="input-group vertical" onSubmit={handleSubmit}>
           <h3>Login User</h3>
           <div className="input-group">
-            <label htmlFor="username">email</label>
+            {/* <label htmlFor="username">email</label> */}
             <input
               type="text"
               name="username"
               value={email}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter username"
+              placeholder="Email"
             />
             {errors.email.length > 0 && (
               <div className="error">
@@ -90,7 +90,7 @@ function Login() {
             )}
           </div>
           <div className="input-group">
-            <label htmlFor="password">Password</label>
+            {/* <label htmlFor="password">Password</label> */}
             <input
               type="password"
               name="password"
@@ -118,10 +118,11 @@ function Login() {
 
           <div className="social">
             <h3>or</h3>
-            <p>sign-in using ...</p>
-            <span>Facebook</span>
-            <span>Google</span>
-            <span>Twitter</span>
+            <p>Sign-in using ...</p>
+           <button className = "Primary bordered small"> <span>Facebook</span> </button>
+           <button className = "Primary bordered small"> <span>Twitter</span> </button>
+           <button className = "Primary bordered small"> <span>Google</span> </button>
+            
           </div>
         </form>
       </div>

@@ -34,13 +34,16 @@
 
 
 button {
-    padding: 10px;
-    border: none;
+    padding-right:5px;
+    border: 2px solid teal;
+    border-radius:5px;
     background-color: teal;
     color: white;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    
+    
 }
 
 .footer {

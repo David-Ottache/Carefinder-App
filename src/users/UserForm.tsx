@@ -98,12 +98,12 @@ function UserForm() {
           <form className="input-group vertical" onSubmit={handleSubmit}>
             <h4>User Registration</h4>
             <div className="input-group">
-              <label htmlFor="username">Username</label>
+              {/* <label htmlFor="username">Username</label> */}
               <input
                 type="text"
                 name="username"
                 value={username}
-                placeholder="what is your username"
+                placeholder="Enter your username"
                 onChange={(e) => setUsername(e.target.value)}
               />
               {errors.username.length > 0 && (
@@ -113,13 +113,13 @@ function UserForm() {
               )}
             </div>
             <div className="input-group">
-              <label htmlFor="email">Email</label>
+              {/* <label htmlFor="email">Email</label> */}
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="what is your email"
+                placeholder="Enter your email"
               />
               {errors.email.length > 0 && (
                 <div className="error">
@@ -128,10 +128,10 @@ function UserForm() {
               )}
             </div>
             <div className="input-group">
-              <label htmlFor="address">Address</label>
+              {/* <label htmlFor="address">Address</label> */}
               <textarea
                 name="address"
-                placeholder="what is your address"
+                placeholder="Enter your Address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
@@ -142,7 +142,7 @@ function UserForm() {
               )}
             </div>
             <div className="input-group">
-              <label htmlFor="number">Number</label>
+              {/* <label htmlFor="number">Number</label> */}
               <input
                 type="number"
                 name="number"
@@ -150,7 +150,7 @@ function UserForm() {
                 onChange={(e) => {
                   setNumber(Number(e.target.value));
                 }}
-                placeholder="what is your number"
+                placeholder="Enter your mobile number"
               />
               {errors.number.length > 0 && (
                 <div className="error">
@@ -159,13 +159,13 @@ function UserForm() {
               )}
             </div>
             <div className="input-group">
-              <label htmlFor="password">Password</label>
+              {/* <label htmlFor="password">Password</label> */}
               <input
                 type="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="what is your password"
+                placeholder="Enter your password"
               />
               {errors.password.length > 0 && (
                 <div className="error">
