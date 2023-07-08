@@ -5,7 +5,7 @@ export class Hospital {
     city: string = '';
     country: string = '';
     email: string = '';
-    number: number = 0;
+    number: string = '';
     link: string = '';
     imgUrl: string = '';
     get isNew(): boolean {

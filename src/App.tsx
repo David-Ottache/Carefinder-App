@@ -53,6 +53,9 @@ function App() {
                 <NavLink to="/export" className="nav-link">
                   <h3>Export</h3>
                 </NavLink>
+                <NavLink to="/create-hospital" className="nav-link">
+                  <h3>Add Hospital</h3>
+                </NavLink>
                 <NavLink to="" onClick={handleLogout} className="nav-link">
                   <h3>Logout</h3>
                 </NavLink>

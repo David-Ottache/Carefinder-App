@@ -4,7 +4,9 @@ import { app, auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert';
-
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import "../static/UserForm.css";
 
 const db = getFirestore(app);
 
@@ -12,7 +14,7 @@ class User {
   username: string = "";
   email: string = "";
   address: string = "";
-  number: number = 0;
+  number: string = "";
   password: string = "";
 }
 
@@ -22,7 +24,8 @@ function UserForm() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
-  const [number, setNumber] = useState<number>(0);
+  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({
     username: "",
@@ -35,6 +38,10 @@ function UserForm() {
   
   const navigate = useNavigate();
 
+  const handleTelephone = (newPhone: string | undefined) => {
+    setPhone(newPhone || ''); 
+    setNumber(newPhone ? newPhone.replace(/\D/g, '') : '0'); 
+  };
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
    
@@ -42,6 +49,7 @@ function UserForm() {
     
     if (!isValid) return;
     setErrors(() => validate(user));
+    
     try {
       const res = await createUserWithEmailAndPassword(auth, user.email, user.password);
       await setDoc(doc(db, "users", res.user.uid), {
@@ -73,7 +81,7 @@ function UserForm() {
     if (user.address.length === 0) {
       errors.address = "**Address is required";
     }
-    if (user.number === 0) {
+    if (user.number.length === 0) {
       errors.number = "**Number is required";
     }
     if (user.password.length === 0) {
@@ -143,16 +151,22 @@ function UserForm() {
             </div>
             <div className="input-group">
               {/* <label htmlFor="number">Number</label> */}
-              <input
+              {/* <input
                 type="number"
                 name="number"
-                value={number}
+                // value={number}
                 onChange={(e) => {
                   setNumber(Number(e.target.value));
                 }}
                 placeholder="Enter your mobile number"
+              /> */}
+              <PhoneInput
+                className='phone-input'
+                placeholder="Enter your mobile number"
+                value={phone}
+                onChange={handleTelephone}
               />
-              {errors.number.length > 0 && (
+                {errors.number.length > 0 && (
                 <div className="error">
                   <p>{errors.number}</p>
                 </div>

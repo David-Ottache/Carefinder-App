@@ -50,8 +50,9 @@ function HomePage() {
       <div className="row">
         <div className="footer">
           <span>
-            Copyright @ 2023
+            Copyright @ 2023 - Alt-School Capstone Project 
           </span>
+        
         </div>
       </div>
     </div>

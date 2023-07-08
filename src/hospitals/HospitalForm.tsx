@@ -6,6 +6,10 @@ import { app, storage } from "../firebase";
 import swal from 'sweetalert';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { Hospital } from './Hospital';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import "../static/UserForm.css";
+
 
 const db = getFirestore(app);
 
@@ -19,7 +23,8 @@ function CreateHospital() {
   const [city, setCity] = useState("")
   const [country, setCountry] = useState(""); 
   const [email, setEmail] = useState("");
-  const [number, setNumber] = useState<number>(0);
+  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [link, setLink] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [imgUrl, setImgUrl] = useState("");
@@ -71,7 +76,10 @@ function CreateHospital() {
     file && uploadFile()
   }, [file])
 
-  
+  const handleTelephone = (newPhone: string | undefined) => {
+    setPhone(newPhone || ''); 
+    setNumber(newPhone ? newPhone.replace(/\D/g, '') : '0'); 
+  };
 
   
 
@@ -111,7 +119,7 @@ function CreateHospital() {
     if (hospital.email.length === 0) {
       errors.email = "**Email is required";
     }
-    if (hospital.number === 0) {
+    if (hospital.number.length === 0) {
       errors.number = "**Number is required";
     }
     if (hospital.link.length === 0) {
@@ -203,13 +211,19 @@ function CreateHospital() {
           </div>
         )}
         <label htmlFor="number">Contact Number</label>
-        <input
+        {/* <input
           type="number"
           name="number"
           value={number}
           onChange={(e) => setNumber(Number(e.target.value))}
           placeholder="Enter the hospital contact number"
-        />
+        /> */}
+        <PhoneInput
+                className='phone-input'
+                placeholder="Enter your mobile number"
+                value={phone}
+                onChange={handleTelephone}
+              />
         {errors.number.length > 0 && (
           <div className="error">
             <p>{errors.number}</p>

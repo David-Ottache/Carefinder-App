@@ -3,7 +3,7 @@ export class User {
     username: string = "";
     email: string = "";
     address: string = "";
-    number: number = 0;
+    number: number | undefined;
     password: string = "";
     get isNew(): boolean {
         return this.id === undefined;

@@ -18,7 +18,7 @@ function HospitalCard(props: HospitalCardProps) {
         <p>Address: {hospital.address}</p>
         <p>City: {hospital.city}</p>
         <p>Country: {hospital.country}</p>
-        <p>Number: {hospital.number}</p>
+        <p>Number: +{hospital.number}</p>
         <p>Link: {hospital.link}</p>
 
         {/* <div className="input group">

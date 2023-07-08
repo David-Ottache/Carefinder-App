@@ -69,6 +69,19 @@ function Login() {
       errors.password.length === 0
     )
   }
+
+  function handleFacebook()  {
+    alert("Facebook Login Coming soon!!")
+    
+  }
+  function handleTwitter()  {
+    alert("Twitter Login Coming soon!!")
+    
+  }
+  function handleGoogle()  {
+    alert("Google Login Coming soon!!")
+    
+  }
   return (
     <div className="login-container">
       <div className="row">
@@ -116,15 +129,16 @@ function Login() {
             </Link>
           </div>
 
-          <div className="social">
+          
+        </form>
+        <div className="social">
             <h3>or</h3>
             <p>Sign-in using ...</p>
-           <button className = "Primary bordered small"> <span>Facebook</span> </button>
-           <button className = "Primary bordered small"> <span>Twitter</span> </button>
-           <button className = "Primary bordered small"> <span>Google</span> </button>
+           <button className = "Primary bordered small" onClick={handleFacebook}> <span>Facebook</span> </button>
+           <button className = "Primary bordered small" onClick={handleTwitter}> <span>Twitter</span> </button>
+           <button className = "Primary bordered small" onClick={handleGoogle}> <span>Google</span> </button>
             
           </div>
-        </form>
       </div>
     </div>
   );
