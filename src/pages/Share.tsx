@@ -39,7 +39,7 @@ function Share() {
         .join("\n");
       try {
         // const url = "https://carefinder-server-psi.vercel.app"; // Replace with your API endpoint URL
-        const url = "https://localhost:8000/sendEmail";
+        const url = "http://localhost:8000/sendEmail";
 
         // Define the data to send
         const data = {
