@@ -38,7 +38,7 @@ function Share() {
         )
         .join("\n");
       try {
-        const url = "https://carefinder-server-psi.vercel.app/sendEmail"; // Replace with your API endpoint URL
+        const url = "https://carefinder-server-psi.vercel.app"; // Replace with your API endpoint URL
 
         // Define the data to send
         const data = {
@@ -49,6 +49,7 @@ function Share() {
 
         // Make the POST request
         const response = await axios.post(url, data);
+        console.log(url);
         console.log("Response:", response.data);
         swal("Success","Email has been sent successfully!!","success")
         navigate("/")
